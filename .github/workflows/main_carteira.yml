@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'carteira'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D09397DFDF244820AAEBF328E7D9F89F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA36031315E34E0D893A94434BE4D1D5 }}
           package: .
