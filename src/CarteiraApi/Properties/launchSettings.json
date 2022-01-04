@@ -14,8 +14,9 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "YahooStockApi": "https://yfapi.net/",
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "SqlConnection": "Server=tcp:carteiraapidbserver.database.windows.net,1433;Initial Catalog=CarteiraApi_db2;Persist Security Info=False;User ID=teste;Password=TestSafra1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "YahooStockApi": "https://yfapi.net/"
       }
     },
     "CarteiraApi": {

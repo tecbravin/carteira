@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using CarteiraApi.Interfaces.Repositories;
 using CarteiraApi.Models.Entities;
-using MySql.Data.MySqlClient;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
