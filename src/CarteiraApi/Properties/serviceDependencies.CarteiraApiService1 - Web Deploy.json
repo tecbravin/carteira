@@ -5,12 +5,6 @@
       "type": "mssql.azure",
       "connectionId": "SqlConnection",
       "secretStore": null
-    },
-    "secrets1": {
-      "type": "secrets",
-      "connectionId": "",
-      "suggestion": "true",
-      "ignored": "true"
     }
   }
 }
