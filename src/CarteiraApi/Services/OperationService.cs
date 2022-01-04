@@ -53,12 +53,12 @@ namespace CarteiraApi.Services
                 request.StockId = Stocks.FirstOrDefault().Id;
                 request.Date = DateTime.Now;
                 request.TotalAmount = await CalculateTotalAmount(request);
-                using (var transaction = new TransactionScope())
+                using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
                     var createdId = await _OperationRepository.Add(request);
                     transaction.Complete();
 
-                    return new BaseResponse { StatusCode = StatusCodes.Status201Created, CreatedId = createdId };
+                    
                 }
             }
             catch (Exception ex)
@@ -66,6 +66,7 @@ namespace CarteiraApi.Services
                 _logger.LogError(ex.ToString());
                 return new BaseResponse { StatusCode = StatusCodes.Status500InternalServerError };
             }
+            return new BaseResponse { StatusCode = StatusCodes.Status201Created };
         }
 
         public async Task<OperationGetResponse> Get(OperationGetRequest request)
@@ -103,5 +104,6 @@ namespace CarteiraApi.Services
 
             return totalAmount;
         }
+
     }
 }

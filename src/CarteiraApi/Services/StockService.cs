@@ -30,12 +30,12 @@ namespace CarteiraApi.Services
                 if (exists)
                     return new BaseResponse { StatusCode = StatusCodes.Status409Conflict, ErrorMessage = Resource.AlreadyExists };
 
-                using (var transaction = new TransactionScope())
+                using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
                     var createdId = await _StockRepository.Add(request);
                     transaction.Complete();
 
-                    return new BaseResponse { StatusCode = StatusCodes.Status201Created, CreatedId = createdId };
+                    
                 }
             }
             catch (Exception ex)
@@ -43,18 +43,18 @@ namespace CarteiraApi.Services
                 _logger.LogError(ex.ToString());
                 return new BaseResponse { StatusCode = StatusCodes.Status500InternalServerError };
             }
+            return new BaseResponse { StatusCode = StatusCodes.Status201Created};
         }
 
         public async Task<BaseResponse> Update(StockUpdateRequest request)
         {
             try
             {
-                using (var transaction = new TransactionScope())
+                using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
                     await _StockRepository.Update(request);
                     transaction.Complete();
 
-                    return new BaseResponse { StatusCode = StatusCodes.Status200OK };
                 }
             }
             catch (Exception ex)
@@ -62,6 +62,7 @@ namespace CarteiraApi.Services
                 _logger.LogError(ex.ToString());
                 return new BaseResponse { StatusCode = StatusCodes.Status500InternalServerError };
             }
+            return new BaseResponse { StatusCode = StatusCodes.Status200OK };
         }
     }
 }

@@ -31,7 +31,7 @@ namespace CarteiraApi.Repositories
                         (
                             @StockCode,
                             @CompanyName
-                        ); SELECT LAST_INSERT_ID();";
+                        ) ";
 
             await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
@@ -88,7 +88,7 @@ namespace CarteiraApi.Repositories
                             1
                           FROM ACOES
                           WHERE CODIGO = @StockCode
-                          LIMIT 1";
+                          ";
 
             await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)

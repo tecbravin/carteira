@@ -24,24 +24,22 @@ namespace CarteiraApi.Repositories
         {
             var query = @"INSERT INTO OPERACOES
                         (
-                            ID,
                             OPERACAO,
                             PRECO,
                             QUANTIDADE,
                             DATA,
                             VALOR_TOTAL,
-                            COD_ACAO
+                            ACAO_ID
                         ) 
                         VALUES
                         (
-                            @Id,
                             @Operation,
                             @Price,
                             @Quantity,
                             @Date,
                             @TotalAmount,
                             @StockId
-                        ); SELECT LAST_INSERT_ID();";
+                        );";
 
             await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
@@ -53,20 +51,25 @@ namespace CarteiraApi.Repositories
         public async Task<IEnumerable<Operation>> Get(OperationGetRequest request)
         {
             var query = @"SELECT 
-                            ID Id,
-                            ACAO_ID StockId,
-                            OPERACAO Order,
-                            PRECO Preco,
-                            QUANTIDADE Quantidade,
-                            DATA Data,
-                            VALOR_TOTAL valor_total
-                          FROM OPERACOES
+                            O.ID Id,
+                            O.ACAO_ID StockId,
+                            O.OPERACAO Operation,
+                            O.PRECO Price,
+                            O.QUANTIDADE Quantity,
+                            O.DATA Date,
+                            O.VALOR_TOTAL TotalAmount
+                            
+                          FROM OPERACOES AS O
+                            INNER JOIN
+                            ACOES AS A
+                            ON O.ACAO_ID = A.ID
+
                           /**where**/";
 
             var builder = new SqlBuilder();
 
             if (!string.IsNullOrEmpty(request.StockCode))
-                builder.Where("CODIGO = @StockCode", new { StockCode = request.StockCode });
+                builder.Where("A.CODIGO = @StockCode", new { StockCode = request.StockCode });
 
             var selector = builder.AddTemplate(query);
 
