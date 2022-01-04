@@ -25,7 +25,7 @@ namespace CarteiraApi.Config
             services.AddTransient<IStockService, StockService>();
             services.AddTransient<IOperationService, OperationService>();
 
-            var connectionString = Environment.GetEnvironmentVariable("MySqlConnection");
+            var connectionString = Environment.GetEnvironmentVariable("MySqlConnection2");
             services.AddTransient<IStockRepository>(repo => new StockRepository(connectionString));
             services.AddTransient<IOperationRepository>(repo => new OperationRepository(connectionString));
             services.AddTransient<IStockParameterRepository>(repo => new StockParameterRepository(connectionString));
