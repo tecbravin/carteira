@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 
 namespace CarteiraApi.Repositories
 {
@@ -32,7 +33,7 @@ namespace CarteiraApi.Repositories
                             @CompanyName
                         ); SELECT LAST_INSERT_ID();";
 
-            await using var conn = new MySqlConnection(_connectionString);
+            await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
                 await conn.OpenAsync();
 
@@ -46,7 +47,7 @@ namespace CarteiraApi.Repositories
                           RAZAO_SOCIAL = @CompanyName
                           WHERE ID = @Id";
 
-            await using var conn = new MySqlConnection(_connectionString);
+            await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
                 await conn.OpenAsync();
 
@@ -74,7 +75,7 @@ namespace CarteiraApi.Repositories
             }
 
             var selector = builder.AddTemplate(query);
-            await using var conn = new MySqlConnection(_connectionString);
+            await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
                 await conn.OpenAsync();
 
@@ -89,7 +90,7 @@ namespace CarteiraApi.Repositories
                           WHERE CODIGO = @StockCode
                           LIMIT 1";
 
-            await using var conn = new MySqlConnection(_connectionString);
+            await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
                 await conn.OpenAsync();
 

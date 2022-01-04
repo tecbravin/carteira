@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 
 namespace CarteiraApi.Repositories
 {
@@ -25,7 +26,7 @@ namespace CarteiraApi.Repositories
                           FROM ACOES_PARAMETER
                           WHERE ID = @Id";
 
-            await using var conn = new MySqlConnection(_connectionString);
+            await using var conn = new SqlConnection(_connectionString);
             if (conn.State == ConnectionState.Closed)
                 await conn.OpenAsync();
 

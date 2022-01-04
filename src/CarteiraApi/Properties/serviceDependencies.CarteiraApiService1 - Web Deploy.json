@@ -3,7 +3,7 @@
     "mssql1": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/carteiraapidbserver/databases/CarteiraApi_db2",
       "type": "mssql.azure",
-      "connectionId": "MySqlConnection2",
+      "connectionId": "SqlConnection",
       "secretStore": null
     }
   }
