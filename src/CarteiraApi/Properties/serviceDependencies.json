@@ -1,14 +1,17 @@
 {
   "dependencies": {
-    "mssql1": {
-      "type": "mssql",
-      "connectionId": "SqlConnection"
-    },
     "secrets1": {
       "type": "secrets",
       "connectionId": "",
       "suggestion": "true",
       "ignored": "true"
+    },
+    "apis1": {
+      "type": "apis"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "SqlConnection"
     }
   }
 }
