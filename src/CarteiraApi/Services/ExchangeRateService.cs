@@ -30,11 +30,11 @@ namespace CarteiraApi.Services
         {
             try
             {
-                var url = $"v6/Finance/quote?lang=pt&symbols={request.StockCode}";
+                var url = $"v6/finance/quote?lang=pt&symbols={request.StockCode}";
                 var responseMessage = _httpClient.GetAsync(url).Result;
                 if (!responseMessage.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation($"ErrorYahooStock-{responseMessage.Content}");
+                    _logger.LogInformation($"ErrorYahooFinance-{responseMessage.Content}");
                     return new ExchangeRateResponse { StatusCode = StatusCodes.Status400BadRequest };
                 }
 
