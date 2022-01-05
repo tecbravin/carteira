@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CarteiraApi</name>
+    </assembly>
+    <members>
+        <member name="M:CarteiraApi.Controllers.ExchangeRateController.Get(CarteiraApi.Models.Requests.ExchangeRate.ExchangeRateGetRequest)">
+            <summary>
+            Method that consults value stocks in Stock data market
+            </summary>
+            <param name="request">ExchangeRateGetRequest</param>
+            <returns>ExchangeRateResponse</returns>
+        </member>
+        <member name="M:CarteiraApi.Controllers.OperationController.Get(CarteiraApi.Models.Requests.Operation.OperationGetRequest)">
+            <summary>
+            Method that returns Stocks Events
+            </summary>
+            <param name="request">StockGetRequest</param>
+            <returns>StockGetResponse</returns>
+        </member>
+        <member name="M:CarteiraApi.Controllers.OperationController.Add(CarteiraApi.Models.Requests.Operation.OperationAddRequest)">
+            <summary>
+            Method that includes an Stock Event
+            </summary>
+            <param name="request">StockAddRequest</param>
+            <returns>BaseResponse</returns>
+        </member>
+        <member name="M:CarteiraApi.Controllers.StockController.Get(CarteiraApi.Models.Requests.Stock.StockGetRequest)">
+            <summary>
+            Method that returns Stocks
+            </summary>
+            <param name="request">StockGetRequest</param>
+            <returns>StockGetResponse</returns>
+        </member>
+        <member name="M:CarteiraApi.Controllers.StockController.Add(CarteiraApi.Models.Requests.Stock.StockAddRequest)">
+            <summary>
+            Method that includes an Stock
+            </summary>
+            <param name="request">StockAddRequest</param>
+            <returns>BaseResponse</returns>
+        </member>
+        <member name="M:CarteiraApi.Controllers.StockController.Update(CarteiraApi.Models.Requests.Stock.StockUpdateRequest)">
+            <summary>
+            Method that update an Stock
+            </summary>
+            <param name="request">StockUpdateRequest</param>
+            <returns>BaseResponse</returns>
+        </member>
+        <member name="T:CarteiraApi.Resources.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.AlreadyExists">
+            <summary>
+              Looks up a localized string similar to Item já cadastrado.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.CompanyName">
+            <summary>
+              Looks up a localized string similar to Razão social da empresa.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.GreaterThanZero">
+            <summary>
+              Looks up a localized string similar to O campo {0} deve ser maior que zero.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.MaxSize">
+            <summary>
+              Looks up a localized string similar to O campo {0} atingiu o limite de {1} caracteres.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.Operation">
+            <summary>
+              Looks up a localized string similar to Operação(Buy ou Sell).
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.Price">
+            <summary>
+              Looks up a localized string similar to Preço.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.Quantity">
+            <summary>
+              Looks up a localized string similar to Quantidade.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.Required">
+            <summary>
+              Looks up a localized string similar to O campo {0} é obrigatório.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.StockCode">
+            <summary>
+              Looks up a localized string similar to Ação.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.StockCodeRequired">
+            <summary>
+              Looks up a localized string similar to Código da ação.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.StockId">
+            <summary>
+              Looks up a localized string similar to Id da ação.
+            </summary>
+        </member>
+        <member name="P:CarteiraApi.Resources.Resource.StockNotFound">
+            <summary>
+              Looks up a localized string similar to A ação não foi encontrada.
+            </summary>
+        </member>
+    </members>
+</doc>

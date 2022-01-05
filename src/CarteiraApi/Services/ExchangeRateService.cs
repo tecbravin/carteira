@@ -30,7 +30,7 @@ namespace CarteiraApi.Services
         {
             try
             {
-                var url = $"v6/Stock/quote?lang=pt&symbols={request.StockCode}";
+                var url = $"v6/Finance/quote?lang=pt&symbols={request.StockCode}";
                 var responseMessage = _httpClient.GetAsync(url).Result;
                 if (!responseMessage.IsSuccessStatusCode)
                 {

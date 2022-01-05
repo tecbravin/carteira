@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>C:\Users\Qintess\Documents\Nova pasta\src\CarteiraApi\bin\Debug\net5.0\CarteiraApi.xml</DocumentationFile>
+    <DocumentationFile>$(MSBuildThisFileDirectory)\bin$(Configuration)$(TargetFramework)\CarteiraApi.xml</DocumentationFile>
     <UserSecretsId>aeb8db5b-0991-4ffc-8319-d4e904158af7</UserSecretsId>
     <StartupObject>CarteiraApi.Program</StartupObject>
   </PropertyGroup>
